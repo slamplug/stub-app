@@ -43,4 +43,7 @@
         </plugins>
     </build>
 
+    <scm>
+        <connection>scm:git:git@github.com:slamplug/stub-app.git</connection>
+    </scm>
 </project>
