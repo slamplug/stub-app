@@ -15,12 +15,13 @@ import uk.slamplug.test.stubapp.db.CustomerDB;
 @SuppressWarnings("UnusedDeclaration")
 @RequestMapping("/db")
 public class StubAppController {
+
     private static final Logger logger = LoggerFactory.getLogger(StubAppController.class);
 
     @RequestMapping(value = "/customer/{id}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     public String getCustomerDetails(@PathVariable("id") long id) throws IOException {
-        logger.debug("getCustomerDetails, id {" + id + "}");
+        logger.info("getCustomerDetails, id {" + id + "}");
         return new ObjectMapper().writer().withDefaultPrettyPrinter().
                 writeValueAsString(new CustomerDB().getCustomerDetails(id));
     }
